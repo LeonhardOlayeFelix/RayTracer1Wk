@@ -6,20 +6,36 @@
 #include "color.h"
 #include "ray.h"
 
-bool ray_hit_sphere(const point3& center, double radius, const ray& r) {
+/// <summary>
+/// Returns the value of the paramter t at which the given ray, P(t), hits the given sphere.
+/// </summary>
+/// <param name="center">Sphere center</param>
+/// <param name="radius">Sphere radius</param>
+/// <param name="r">Ray</param>
+/// <returns></returns>
+double hit_sphere(const point3& center, double radius, const ray& r) {
     vec3 d = r.direction();
     vec3 Q = r.origin();
     vec3 oc = center - Q;
     auto a = dot(d, d);
     auto b = -2 * dot(d, oc);
     auto c = dot(oc, oc) - radius * radius;
-    return (b * b) - 4 * a * c >= 0;
+    double discriminant = (b * b) - 4 * a * c;
+    if (discriminant < 0) {
+        return -1.0;
+    }
+    else {
+        return (-b - std::sqrt(discriminant)) / (2.0 * a);
+    }
 }
 
 color ray_color(const ray& r) {
-    if (ray_hit_sphere(vec3(0, 0, -1), 0.5, r)) {
-        return color(1, 0, 0);
+    auto t = hit_sphere(point3(0, 0, -1), 0.5, r);
+    if (t > 0.0) {
+        vec3 N = unit_vector(r.at(t) - vec3(0, 0, -1));
+        return 0.5 * color(N.x() + 1, N.y() + 1, N.z() + 1);
     }
+
     vec3 unit_direction = unit_vector(r.direction());
     auto a = 0.5 * (unit_direction.y() + 1.0);
     return (1.0 - a) * color(1.0, 1.0, 1.0) + a * color(0.5, 0.7, 1.0);
