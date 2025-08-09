@@ -1,0 +1,7 @@
+# ninja log v6
+910	1210	7764486190762223	RayTracer/RayTracer.exe	91157adb983ae935
+20	908	7764486181879205	RayTracer/CMakeFiles/RayTracer.dir/RayTracer.cpp.obj	a97ecf7fb8c315fe
+18	136	7764677997065610	build.ninja	991136db68d35cd
+21	243	7764677997065610	build.ninja	991136db68d35cd
+22	964	7764677997587388	RayTracer/CMakeFiles/RayTracer.dir/RayTracer.cpp.obj	a97ecf7fb8c315fe
+966	1136	7764678007023733	RayTracer/RayTracer.exe	91157adb983ae935
