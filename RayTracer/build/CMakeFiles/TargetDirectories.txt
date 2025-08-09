@@ -1,0 +1,3 @@
+C:/Users/leonh/source/repos/RayTracer1Wk/RayTracer/build/CMakeFiles/RayTracer.dir
+C:/Users/leonh/source/repos/RayTracer1Wk/RayTracer/build/CMakeFiles/edit_cache.dir
+C:/Users/leonh/source/repos/RayTracer1Wk/RayTracer/build/CMakeFiles/rebuild_cache.dir
