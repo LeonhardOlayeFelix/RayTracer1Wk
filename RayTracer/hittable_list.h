@@ -4,9 +4,6 @@
 
 #include <vector>
 
-using std::make_shared;
-using std::shared_ptr;
-
 class hittable_list : public hittable {
 public:
     std::vector<shared_ptr<hittable>> objects;

@@ -1,10 +1,6 @@
 
 #pragma once
 
-#include <cmath>
-#include <iostream>
-#include "common.h"
-
 class vec3 {
 	public:
 	#pragma region Properties
@@ -72,6 +68,11 @@ class vec3 {
 
 		double length_squared() const {
 			return e[0] * e[0] + e[1] * e[1] + e[2] * e[2];
+		}
+
+		bool near_zero() const {
+			auto s = 1e-8;
+			return (std::fabs(e[0]) < s) && (std::fabs(e[1]) < s) && (std::fabs(e[2]) < s);
 		}
 
 		static vec3 random() {
@@ -146,4 +147,8 @@ inline vec3 random_on_hemisphere(const vec3& normal) {
 		return on_unit_sphere;
 	else
 		return -on_unit_sphere;
+}
+
+inline vec3 reflect(const vec3& v, const vec3& n) {
+	return v - 2 * dot(v, n) * n;
 }

@@ -1,9 +1,19 @@
 #pragma once
 
 #include <cmath>
+#include <cstdlib>
 #include <iostream>
 #include <limits>
 #include <memory>
+#include <random>
+
+// C++ Std Usings
+
+using std::make_shared;
+using std::shared_ptr;
+
+
+// Constants
 
 const double infinity = std::numeric_limits<double>::infinity();
 const double pi = 3.1415926535897932385;
@@ -25,9 +35,7 @@ inline double random_double(double min, double max) {
 }
 
 #include "color.h"
+#include "interval.h"
 #include "ray.h"
 #include "vec3.h"
-#include "interval.h"
-#include "hittable.h"
-#include "hittable_list.h"
-#include "sphere.h"
+
