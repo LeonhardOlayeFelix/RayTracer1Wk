@@ -17,3 +17,7 @@ inline double degrees_to_radians(double degrees) {
 #include "color.h"
 #include "ray.h"
 #include "vec3.h"
+#include "interval.h"
+#include "hittable.h"
+#include "hittable_list.h"
+#include "sphere.h"
