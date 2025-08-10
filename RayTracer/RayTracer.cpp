@@ -27,7 +27,7 @@ int main() {
     world.add(make_shared<sphere>(point3(0, -100.5, -1), 100));
 
     camera cam;
-
+    cam.max_depth = 50;
     cam.aspect_ratio = 16.0 / 9.0;
     cam.image_width = 400;
 
